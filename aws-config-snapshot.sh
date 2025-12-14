@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Same region list as before
-REGIONS=(
-eu-west-2
-eu-west-1
-ap-northeast-3
-ap-northeast-2
-ap-northeast-1
-ca-central-1
-sa-east-1
-ap-southeast-1
-ap-southeast-2
-eu-central-1
-us-east-1
-us-east-2
-us-west-1
-us-west-2
-)
+# # Same region list as before
+# REGIONS=(
+# eu-west-2
+# eu-west-1
+# ap-northeast-3
+# ap-northeast-2
+# ap-northeast-1
+# ca-central-1
+# sa-east-1
+# ap-southeast-1
+# ap-southeast-2
+# eu-central-1
+# us-east-1
+# us-east-2
+# us-west-1
+# us-west-2
+# )
 
-# for REGION in $(aws ec2 describe-regions --query "Regions[].RegionName" --output text)
-for REGION in "${REGIONS[@]}"
+for REGION in $(aws ec2 describe-regions --query "Regions[].RegionName" --output text)
+# for REGION in "${REGIONS[@]}"
 do
 
   echo "Creating snapshot in $REGION …"
